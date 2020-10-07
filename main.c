@@ -1,87 +1,52 @@
-#include<function.h>
-
+#include <stdio.h>
+void calculate(int cgpa);
 int main()
+
 {
-	
-double principle,rate,time,simple_intrest;
 
-printf("enter principle");
-printf("\n");
+int num_sem = 0;
 
-scanf("%lf",&principle);
+float temp = 0;
 
-printf("enter rate of intrest");
-printf("\n");
+float sum = 0;
 
-scanf("%lf",&rate);
+float gpa = 0.0;
 
-printf("enter time in months");
-printf("\n");
+printf("Enter number of semesters\n");
 
-scanf("%lf",&time);
+scanf("%d", &num_sem);
 
-//principle value greater than zero
+printf("Enter max GPA per semester Example: In US it is 4, in India it is 10\n");
+int i;
 
-if(principle<=0)
+for(i =1; i<= num_sem; i++)
+
 {
-	printf("enter enter the value greater than zero");
-	
-	exit(0);
+
+printf("Enter %d sem GPA\t", i);
+
+scanf("%f", &temp);
+
+sum += temp;
+
 }
 
-//rate value greater than zero
+gpa = sum/(float)num_sem;
 
-if(rate<=0)
-{
-	printf("enter enter the value greater than zero");
-	
-	exit(0);
+printf("Over all GPA is\t%f\n", gpa );
+calculate(gpa);
 }
-
-//time value greater than zero
-
-if(time<=0)
-{
-	printf("enter enter the value greater than zero");
-	
-	exit(0);
-}
-
-printf("enter 1 for simple intrest");
-
-printf("\n");
-
-printf("enter 2 for compound intrest");
-
-printf("\n");
-
-int enter;
-
-scanf("%d",&enter);
-
-if(enter==1)
-{
-	
-	double SI=FindSimple(principle,rate,time);
-	
-	printf("%lf",SI);
-	
-}
-
-if(enter==2)
+void calculate(int cgpa)
 {
 
-double CI=FindCompound(principle,rate,time);
-	
-	printf("%lf",CI);
-}
+if(cgpa<5)
+printf("D");
+if(cgpa>5&&cgpa<=6)
+printf("C");
+if(cgpa>6&&cgpa<=7)
+printf("B");
+if(cgpa>7&&cgpa<=8)
+printf("A");
 
-if(enter>2)
-{
-	printf("please choose the correct value try again");
-	
-	exit(0);
-	
-}
-return 0;
+
 }
