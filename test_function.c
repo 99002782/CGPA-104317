@@ -6,8 +6,8 @@
 #define PROJECT_NAME "Function"
 
 /* Prototypes for all the test functions */
-void test_simple(double,double,double);
-void test_compound(double,double,double);
+void calculate(int gpa);
+
 
 
 /* Start of the application test */
